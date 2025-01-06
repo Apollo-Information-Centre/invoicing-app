@@ -1,0 +1,40 @@
+.dashboard {
+    margin-top: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard h2 {
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  td[colspan="4"] {
+    text-align: center;
+    color: #777;
+  }

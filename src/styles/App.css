@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .App {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #28a745; /* Green for branding */
+    margin-bottom: 30px;
+  }
+  
+  .form-container {
+    margin-bottom: 30px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="color"] {
+    width: calc(50% - 10px);
+    padding: 10px;
+    margin: 10px 5px 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus {
+    border-color: #28a745; /* Highlight border on focus with a matching color */
+  }
+  
+  .item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items properly */
+    margin-bottom: 15px;
+  }
+  
+  .item-row input {
+    width: calc(30% - 10px); /* Allocate space evenly to item quantity, price, and description */
+  }
+  
+  button {
+    background-color: #28a745; /* Green for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+    font-weight: bold; /* Bold text for clarity */
+  }
+  
+  button:hover {
+    background-color: #218838; /* Darker green for hover */
+  }
+  
+  .invoice {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Light background for invoice */
+  }
+  
+  .invoice h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+    font-size: 24px; /* Heading font size */
+    border-bottom: 2px solid #28a745; /* Underline with brand color */
+    padding-bottom: 5px;
+  }
+  
+  .business-details {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #ffffff; /* White background for business details */
+  }
+  
+  .invoice-logo {
+    max-width: 150px;
+    margin: 0 auto 20px; /* Added bottom margin for spacing */
+    display: block;
+  }
+  
+  .invoice ul {
+    padding: 0;
+    list-style: none;
+    margin: 15px 0; /* Added margin */
+  }
+  
+  .invoice ul li {
+    margin: 10px 0; /* Space between items */
+    padding: 10px;
+    background: #e9ecef; /* Light gray background for item rows */
+    border-left: 5px solid #28a745; /* Brand accent */
+  }
+  
+  .invoice h4 {
+    margin: 10px 0;
+    color: #333;
+    font-weight: 600; /* Bolder text for section titles */
+  }
+  
+  .invoice h4:not(:last-child) {
+    border-bottom: 1px solid #ddd; /* Add separation lines */
+    padding-bottom: 5px;
+  }
+  
+  .thank-you {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #28a745; /* Green color for thank you message */
+    text-align: center;
+    margin-top: 20px; /* Spacing above */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="color"] {
+      width: calc(100% - 10px); /* Full width on smaller screens */
+    }
+  
+    .item-row {
+      flex-direction: column; /* Stack the items vertically in mobile view */
+    }
+  
+    .item-row input {
+      width: 100%; /* Full width for inputs on mobile */
+      margin-bottom: 10px; /* Spacing between item inputs */
+    }
+  }
