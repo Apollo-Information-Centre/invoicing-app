@@ -64,7 +64,7 @@ const App = () => {
     const element = invoiceRef.current;
     html2pdf()
       .from(element)
-      .save(`${invoice.clientName}_invoice.pdf`);
+      .save(`Ksh{invoice.clientName}_invoice.pdf`);
   };
 
   const handleLogoUpload = (e) => {
@@ -144,7 +144,7 @@ const App = () => {
         <ul>
           {invoice.items.map((item, index) => (
             <li key={index}>
-              {item.description} - {item.quantity} x ${parseFloat(item.price).toFixed(2)} = ${parseFloat(item.quantity * item.price).toFixed(2)}
+              {item.description} - {item.quantity} x Ksh{parseFloat(item.price).toFixed(2)} = Ksh{parseFloat(item.quantity * item.price).toFixed(2)}
             </li>
           ))}
         </ul>
