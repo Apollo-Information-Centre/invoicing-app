@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import html2pdf from 'html2pdf.js';
+import { QRCodeSVG } from 'qrcode.react'; // Import the QRCodeSVG component
 import './styles/App.css';
 
 const App = () => {
@@ -118,7 +119,7 @@ const App = () => {
         <button onClick={calculateInvoice}>Calculate Total</button>
         <button onClick={downloadPDF}>Download PDF</button>
 
-        <input type="text" name="Payment Till" placeholder="Payment Till" value={invoice.paymentTerms} onChange={handleChange} />
+        <input type="text" name="paymentTerms" placeholder="Payment Terms" value={invoice.paymentTerms} onChange={handleChange} />
       </div>
 
       <div ref={invoiceRef} className="invoice" style={{ backgroundColor: invoice.invoiceColor }}>
@@ -148,14 +149,26 @@ const App = () => {
           ))}
         </ul>
 
-        <h4>Subtotal: ${invoice.subTotal.toFixed(2)}</h4>
-        <h4>Discount: ${invoice.discount.toFixed(2)}</h4>
-        <h4>Total: ${invoice.total.toFixed(2)}</h4>
-        <h4>Balance Due: ${invoice.total.toFixed(2)}</h4>
+        <h4>Subtotal: Ksh{invoice.subTotal.toFixed(2)}</h4>
+        <h4>Discount: Ksh{invoice.discount.toFixed(2)}</h4>
+        <h4>Total: Ksh{invoice.total.toFixed(2)}</h4>
+        <h4>Balance Due: Ksh{invoice.total.toFixed(2)}</h4>
 
-        <h4>Payment Till: {invoice.paymentTill}</h4>
+        <h4>Payment Till: 5956159 {invoice.paymentTerms}</h4>
         
         <h3>{invoice.thankYouMessage}</h3>
+
+        {/* Add QR Code here for TikTok account */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
+          <h4 style={{ textAlign: 'center', marginBottom: '10px' }}>
+            Scan the QR code below to follow us on TikTok for tips, discounts, and more!
+          </h4>
+          <QRCodeSVG 
+            value="https://www.tiktok.com/@budgetbymadge" // URL to TikTok account
+            size={128} // Size of the QR code
+            level="H" // Error correction level
+          />
+        </div>
       </div>
     </div>
   );
